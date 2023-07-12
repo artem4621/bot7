@@ -1,14 +1,11 @@
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from callback.animals import AnimalsCallback
-cats = InlineKeyboardButton(text='Котов', callback_data=AnimalsCallback(
-    animal='cat',
-    count=4
-).pack())
-dogs = InlineKeyboardButton(text='Собак', callback_data=AnimalsCallback(
-    animal='dog',
-    count=5
-).pack())
 
-cats_dogs_keyboard = InlineKeyboardMarkup(inline_keyboard=[
-    [cats, dogs],
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+from callback.animals import AnimalsCallback
+
+phone = InlineKeyboardButton(text='Телефонов', callback_data=AnimalsCallback(animal='Телефон', count=4).pack())
+laptop = InlineKeyboardButton(text='Ноутбуков', callback_data=AnimalsCallback(animal='Ноутбук', count=5).pack())
+
+phone_laptop_keyboard = InlineKeyboardMarkup(inline_keyboard=[
+    [phone, laptop],
 ])
